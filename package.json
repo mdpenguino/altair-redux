@@ -1,0 +1,13 @@
+{
+  "name": "Altair",
+  "productName": "Altair Redux",
+  "description": "Library viewer for MyAnimeList",
+  "version": "0.1.1",
+  "main": "src/main.js",
+  "author": "mdpenguino",
+  "license": "MIT",
+  "private": "true",
+  "repository": {
+    "type": "git"
+  }
+}
