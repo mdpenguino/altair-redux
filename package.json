@@ -6,7 +6,7 @@
   "main": "src/main.js",
   "author": "mdpenguino",
   "homepage": "https://github.com/mdpenguino/altair-redux",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "private": "true",
   "repository": {
     "type": "git",
