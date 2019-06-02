@@ -5,9 +5,11 @@
   "version": "0.1.1",
   "main": "src/main.js",
   "author": "mdpenguino",
+  "homepage": "https://github.com/mdpenguino/altair-redux",
   "license": "MIT",
   "private": "true",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/mdpenguino/altair-redux.git"
   }
 }
