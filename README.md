@@ -1,4 +1,4 @@
-Altair-Redux
+# Altair-Redux
 
 
 Recreation of [Altair](https://github.com/mdpenguino/altair), using Electron. Altair will be an anime tracker with planned support, primarily MyAnimeList, but hopefully Kitsu and AniList further down the line.
