@@ -1,4 +1,6 @@
 const {app, BrowserWindow} = require('electron')
+const url = require('url');
+const path = require('path');
 
 function createWindow () {
   win = new BrowserWindow({
@@ -8,15 +10,29 @@ function createWindow () {
     minHeight:600,
     x: 0,
     y: 0,
+    autoHideMenuBar: true,
     'web-preferences': {
-      'web-security': false,
-      nodeIntegration: false,
-      nodeIntegrationInWorker: true,
+      contextIsolation: true,
       offscreen: true
       }
   })
-  win.loadURL('http://localhost:3000/')
+  win.loadURL(url.format({
+    pathname: path.join('localhost:3000/'),
+    protocol: 'http',
+  }))
   win.webContents.openDevTools()
 }
 
 app.on('ready', createWindow)
+
+app.on('activate', () => {
+  if (win === null) {
+    createWindow()
+  }
+})
+
+app.on('windows-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
