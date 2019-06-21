@@ -1,15 +1,36 @@
 {
-  "name": "AltaiR",
-  "productName": "Altair Redux",
-  "description": "Library viewer for MyAnimeList",
-  "version": "0.0.1",
+  "name": "altair-redux",
+  "version": "0.1.0",
+  "private": true,
   "main": "src/main.js",
-  "author": "mdpenguino",
-  "homepage": "https://github.com/mdpenguino/altair-redux",
-  "license": "GPL-3.0-only",
-  "private": "true",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mdpenguino/altair-redux.git"
+  "electron-start": "electron .",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "electron": "^5.0.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
