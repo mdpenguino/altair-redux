@@ -8,8 +8,6 @@ function createWindow () {
     height: 600,
     minWidth: 800,
     minHeight:600,
-    x: 0,
-    y: 0,
     autoHideMenuBar: true,
     'web-preferences': {
       contextIsolation: true,
@@ -20,17 +18,14 @@ function createWindow () {
     pathname: path.join('localhost:3000/'),
     protocol: 'http',
   }))
+    win.once('ready-to-show', () => {
+    win.maximize()
+  })
   win.webContents.openDevTools()
   win.setFullScreen(true)
 }
 
 app.on('ready', createWindow)
-
-app.on('activate', () => {
-  if (win === null) {
-    createWindow()
-  }
-})
 
 app.on('windows-all-closed', () => {
   if (process.platform !== 'darwin') {
