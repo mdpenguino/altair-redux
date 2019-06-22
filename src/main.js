@@ -21,6 +21,7 @@ function createWindow () {
     protocol: 'http',
   }))
   win.webContents.openDevTools()
+  win.setFullScreen(true)
 }
 
 app.on('ready', createWindow)
