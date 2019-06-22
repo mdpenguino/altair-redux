@@ -20,10 +20,9 @@ function createWindow () {
     protocol: 'http',
   }))
     win.once('ready-to-show', () => {
-    win.maximize()
   })
   win.webContents.openDevTools()
-  win.setFullScreen(true)
+  win.maximize()
 }
 
 app.on('ready', createWindow)
