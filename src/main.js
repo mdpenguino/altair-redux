@@ -1,34 +1,43 @@
 const {app, BrowserWindow} = require('electron')
-const url = require('url');
-const path = require('path');
+const url = require('url')
+const path = require('path')
+
+let mainWindow
 
 function createWindow () {
-  win = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     minWidth: 800,
-    minHeight:600,
-    icon: "src/icons/ico/altair.ico",
+    minHeight: 600,
+    title: "AltaiR",
+    show: false,
     autoHideMenuBar: true,
-    'web-preferences': {
+    icon: "src/icons/ico/altair.ico",
+    webPreferences: {
+    //  preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
-      offscreen: true
-      }
+    }
   })
-  win.loadURL(url.format({
-    pathname: path.join('localhost:3000/'),
-    protocol: 'http',
-  }))
-    win.once('ready-to-show', () => {
+
+  mainWindow.loadURL('http://localhost:3000')
+  mainWindow.maximize()
+  mainWindow.webContents.openDevTools()
+
+  mainWindow.once('ready-to-show', () => {
+    win.show()
   })
-  win.webContents.openDevTools()
-  win.maximize()
+
+  mainWindow.on('closed', function () {
+    mainWindow = null
+  })
 }
 
 app.on('ready', createWindow)
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit()
+})
 
-app.on('windows-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
+app.on('activate', function () {
+  if (mainWindow === null) createWindow()
 })
