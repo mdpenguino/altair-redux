@@ -1,6 +1,7 @@
 const {app, BrowserWindow} = require('electron')
 const url = require('url')
 const path = require('path')
+const os = require('os');
 
 let mainWindow
 
@@ -23,6 +24,11 @@ function createWindow () {
   mainWindow.loadURL('http://localhost:3000')
   mainWindow.maximize()
   mainWindow.webContents.openDevTools()
+
+  //Import React devtools from the developers chrome folder, if its not working, install the React devtools through chrome
+  BrowserWindow.addDevToolsExtension(
+     path.join(os.homedir(), 'AppData/Local/Google/Chrome/User Data/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/3.6.0_0')
+  )
 
   mainWindow.once('ready-to-show', () => {
     win.show()
