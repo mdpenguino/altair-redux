@@ -1,3 +1,35 @@
+/*
+Theming:
+#44AF69 (pastel green)
+#F8454D (red)
+#FCC151 (yellow)
+#64B8C7 (blue)
+#EFEFEF (grey)
+#32908f (darker blue)
+
+#870505 (Spoiler Red)
+
+#c76363 (Link hover NSFW)
+#722525 (Link focus NSFW)
+
+#64B8C7 (Link hover blue)
+#256772 (Link focus blue)
+#48a2cc (hyperlink plain)
+
+Colour Codes for Ratings
+#99c140 (green)
+#e8812c (amber)
+#cc3232 (red)
+
+
+#2E51A2 (mal blue)
+#F75139 (kitsu orange)
+#402F3F (kitsu secondary)
+#0099FF (anilist blue)
+
+#d1e3aa
+*/
+
 .App {
   text-align: center;
 }
@@ -20,7 +52,15 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #48a2cc;
+}
+
+.App-link:hover {
+  color: #64B8C7;
+}
+
+.App-link:focus {
+  color: #256772
 }
 
 /*
