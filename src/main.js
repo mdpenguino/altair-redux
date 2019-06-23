@@ -8,7 +8,7 @@ function createWindow () {
     height: 600,
     minWidth: 800,
     minHeight:600,
-    icon: "src/icons/png/32x32.png",
+    icon: "src/icons/ico/altair.ico",
     autoHideMenuBar: true,
     'web-preferences': {
       contextIsolation: true,
