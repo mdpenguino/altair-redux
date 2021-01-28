@@ -19,7 +19,7 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "electron": "^5.0.4"
+    "electron": "^9.4.0"
   },
   "browserslist": {
     "production": [
